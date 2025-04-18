@@ -241,6 +241,7 @@ Resources expose data to LLMs. They should primarily provide information without
 
 Decorate functions with `@mcp.resource("your://uri")`. Use curly braces `{}` in the URI to define dynamic resources (templates) where parts of the URI become function parameters.
 
+
 ```python
 # Static resource returning simple text
 @mcp.resource("config://app-version")
@@ -505,6 +506,7 @@ async with Client(mcp, sampling_handler=sampling_handler) as client:
     result = await client.call_tool("generate_poem", {"topic": "autumn leaves"})
     print(result.content[0].text)
 ```
+
 
 This pattern is powerful because:
 1. The server can delegate text generation to the client LLM
